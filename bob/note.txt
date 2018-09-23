@@ -1,0 +1,37 @@
+
+1 - Sure - ask him a question 
+- last non empty character is ? 
+
+
+2 - Whoa, chill out! - yell at him.
+- ! at the end OR all block letters
+
+
+3 - Calm down, I know what I'm doing! - yell a question at him.
+-  ! AND all block letters 
+
+
+4 - Fine. Be that way! - address him without actually saying anything
+- zero length
+
+
+5 - 'Whatever.' -  to anything else.  
+
+
+
+1, remove all whites 
+get last char 
+check all block 
+
+
+if zero length - 4
+
+if ? last  - 1 
+
+if ! last && all block - 2 
+
+
+else if ! last OR all blocks  -3 
+
+else 5 
+
