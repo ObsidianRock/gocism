@@ -58,4 +58,10 @@ var testCases = []struct {
 		seconds:     8210123456,
 		expected:    1.58,
 	},
+	{
+		description: "age on Pluto",
+		planet:      "Pluto",
+		seconds:     8210123456,
+		expected:    0,
+	},
 }
