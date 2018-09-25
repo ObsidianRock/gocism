@@ -7,10 +7,6 @@ func Convert(num int) string {
 
 	var raindrops string
 
-	if num%3 != 0 && num%5 != 0 && num%7 != 0 {
-		return fmt.Sprintf("%d", num)
-	}
-
 	if num%3 == 0 {
 		raindrops += "Pling"
 	}
@@ -21,6 +17,10 @@ func Convert(num int) string {
 
 	if num%7 == 0 {
 		raindrops += "Plong"
+	}
+
+	if len(raindrops) == 0 {
+		return fmt.Sprintf("%d", num)
 	}
 
 	return raindrops
