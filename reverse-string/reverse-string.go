@@ -1,5 +1,6 @@
 package reverse
 
+//String reverses a string
 func String(s string) string {
 
 	if len(s) == 0 {
