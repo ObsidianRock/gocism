@@ -13,24 +13,42 @@ type Clock struct {
 //New ...
 func New(hours, minutes int) Clock {
 
-	if hours < 0 {
-		h := hours % 24
-		// hours = 24 + (-h)
-		hours = 24 + h
+	var h, m int
 
+	h, m = hours, minutes
+
+	if hours < 0 {
+		x := hours % 24
+		// hours = 24 + (-h)
+		h = 24 + x
 	}
 
 	if minutes < 0 {
-		m := minutes % 1440
+		x := minutes % 1440
 		// minutes in 24 hours
-		minutes = 1440 + m
+		m = 1440 + x
 	}
 
-	h := int(math.Abs(float64(hours)))
-	m := int(math.Abs(float64(minutes)))
+	if hours > 24 {
+		x := hours % 24
+		h = x
+	}
+
+	if minutes > 1440 {
+		x := minutes % 1440
+		m = x
+	}
+
+	var secs int
+	secs = (60 * 60 * h) + (60 * m)
+
+	if secs > 86400 {
+		s := secs % 86400
+		secs = s
+	}
 
 	c := Clock{
-		sec: (60 * 60 * h) + (60 * m),
+		sec: secs,
 	}
 
 	return c
