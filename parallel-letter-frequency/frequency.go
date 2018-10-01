@@ -2,7 +2,7 @@ package letter
 
 type FreqMap map[rune]int
 
-//Frequency ...
+//Frequency counts the frequency of letters in texts using sequential computation
 func Frequency(s string) FreqMap {
 
 	m := FreqMap{}
@@ -24,7 +24,7 @@ func breakdown(str []string, rc chan rune) {
 	return
 }
 
-//ConcurrentFrequency ...
+//ConcurrentFrequency counts the frequency of letters in texts using parallel computation.
 func ConcurrentFrequency(str []string) FreqMap {
 	m := FreqMap{}
 
