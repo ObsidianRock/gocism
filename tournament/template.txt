@@ -1,0 +1,4 @@
+Team                           | MP |  W |  D |  L |  P
+{{range teams}} 
+    .Name                      | .Matches| .Win | .Draw | .Loss | .Total | 
+{{end}}
