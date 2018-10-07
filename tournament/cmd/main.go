@@ -2,10 +2,11 @@ package main
 
 import (
 	"bytes"
-	"exercism/tournament"
 	"fmt"
 	"io/ioutil"
 	"os"
+
+	"github.com/ObsidianRock/gocism/tournament"
 )
 
 func main() {
