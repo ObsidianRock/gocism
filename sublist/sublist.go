@@ -1,5 +1,6 @@
 package sublist
 
+//Relation ...
 type Relation string
 
 //Sublist ...
