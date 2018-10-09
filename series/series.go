@@ -19,23 +19,3 @@ func All(n int, s string) []string {
 
 	return series
 }
-
-// UnsafeFirst returns the first substring of s with length n.
-func UnsafeFirst(n int, s string) string {
-
-	var series []string
-
-	end, front := 0, n
-
-	for {
-		if front > len(s) {
-			break
-		}
-		series = append(series, string(s[end:front]))
-
-		end++
-		front++
-	}
-
-	return series[0]
-}
