@@ -18,15 +18,12 @@ const (
 // KindFromSides should have a comment documenting it.
 func KindFromSides(a, b, c float64) Kind {
 
-	if !isTriangle(a, b, c) {
+	switch {
+	case !isTriangle(a, b, c):
 		return NaT
-	}
-
-	if a == b && a == c {
+	case a == b && a == c:
 		return Equ
-	}
-
-	if a == b || a == c || b == c {
+	case a == b || a == c || b == c:
 		return Iso
 	}
 
@@ -45,15 +42,16 @@ func isTriangle(a, b, c float64) bool {
 
 	var biggest, side1, side2 float64
 
-	if a > b && a > c {
+	switch {
+	case a > b && a > c:
 		biggest = a
 		side1 = b
 		side2 = c
-	} else if b > a && b > c {
+	case b > a && b > c:
 		biggest = b
 		side1 = a
 		side2 = c
-	} else {
+	default:
 		biggest = c
 		side1 = a
 		side2 = b
