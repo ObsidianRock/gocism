@@ -5,10 +5,6 @@ func IsPangram(s string) bool {
 
 	seen := make(map[int]bool)
 
-	for i := 97; i < 122; i++ {
-		seen[i] = false
-	}
-
 	for i := 0; i < len(s); i++ {
 
 		if s[i] >= 65 && s[i] <= 90 {
@@ -20,7 +16,9 @@ func IsPangram(s string) bool {
 		}
 	}
 
-	for _, ok := range seen {
+	for _, v := range "abcdefghijklmnopqrstuvwxyz" {
+
+		_, ok := seen[int(v)]
 		if !ok {
 			return false
 		}
