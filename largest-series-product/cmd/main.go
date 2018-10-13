@@ -9,5 +9,6 @@ import (
 func main() {
 
 	sum, _ := lsproduct.LargestSeriesProduct("0123456789", 2)
+
 	fmt.Println(sum)
 }
